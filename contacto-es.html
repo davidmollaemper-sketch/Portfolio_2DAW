@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Quién soy - David Molla Emper</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
+        />
+
+        <style>
+            /* --- ESTILOS COMUNES (Mismos que index y projects) --- */
+            :root {
+                --primary-blue: #0d6efd;
+                --dark-bg: #0b1120;
+            }
+            body {
+                font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+                background-color: #f8f9fa;
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
+            }
+            .navbar-brand {
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+            .logo-box {
+                background-color: var(--primary-blue);
+                color: white;
+                width: 35px;
+                height: 35px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 5px;
+                font-weight: bold;
+            }
+            footer {
+                background-color: var(--dark-bg);
+                color: #a0a0a0;
+                font-size: 0.9rem;
+                margin-top: auto;
+            }
+            footer h5 {
+                color: white;
+                font-weight: 700;
+                margin-bottom: 1.2rem;
+            }
+            .social-icon {
+                width: 40px;
+                height: 40px;
+                background-color: #1f2937;
+                border-radius: 50%;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                margin-right: 10px;
+                text-decoration: none;
+                transition: background 0.3s;
+            }
+            .social-icon:hover {
+                background-color: var(--primary-blue);
+            }
+            .map-placeholder {
+                width: 100%;
+                height: 150px;
+                background-color: #ddd;
+                border-radius: 8px;
+                overflow: hidden;
+                border: none;
+            }
+            .map-placeholder iframe {
+                width: 100%;
+                height: 100%;
+                border: none;
+                border-radius: 8px;
+            }
+
+            /* --- ESTILOS ESPECÍFICOS DE CONTACTO --- */
+            .page-title {
+                color: #0b1120;
+                font-weight: 800;
+                margin-bottom: 2rem;
+            }
+
+            .custom-card {
+                border: none;
+                border-radius: 10px;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+                background-color: white;
+                padding: 2rem;
+                margin-bottom: 2rem;
+            }
+
+            .section-title {
+                font-weight: 700;
+                color: #212529;
+                margin-bottom: 1.5rem;
+            }
+
+            .skill-item {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 0.8rem;
+                color: #555;
+            }
+            .skill-item i {
+                color: var(--primary-blue);
+            }
+
+            /* Estilos del Formulario */
+            .form-label {
+                font-weight: 600;
+                font-size: 0.9rem;
+                color: #495057;
+            }
+            .form-control,
+            .input-group-text {
+                background-color: #fff;
+                border: 1px solid #ced4da;
+                padding: 0.75rem;
+            }
+            .input-group-text {
+                background-color: #f8f9fa;
+                color: #6c757d;
+            }
+            .form-control:focus {
+                box-shadow: none;
+                border-color: var(--primary-blue);
+            }
+        </style>
+    </head>
+    <body>
+        <nav
+            class="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm sticky-top"
+        >
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <div class="logo-box">D</div>
+                    David Molla Emper
+                </a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div
+                    class="collapse navbar-collapse justify-content-end"
+                    id="navbarNav"
+                >
+                    <ul class="navbar-nav align-items-center">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index-es.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="proyectos-es.html"
+                                >Proyectos</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a
+                                class="nav-link active fw-bold text-primary"
+                                href="contacto-es.html"
+                                >Acerca / Contacto</a
+                            >
+                        </li>
+
+                        <li class="nav-item ms-3">
+                            <a class="nav-link fw-bold" href="contacto-en.html"
+                                ><i class="bi bi-globe"></i> EN</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="container py-5">
+            <h1 class="text-center page-title">Quién soy</h1>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="custom-card">
+                        <h2 class="section-title">Sobre mí</h2>
+                        <div class="text-muted mb-4">
+                            <p>
+                                Soy David Molla Emper, diseñador web apasionado
+                                por crear interfaces visualmente atractivas y
+                                funcionales. Me especializo en desarrollar
+                                proyectos que combinan creatividad, usabilidad y
+                                buenas prácticas web.
+                            </p>
+                            <p>
+                                Mi objetivo es que cada página que diseño no
+                                solo se vea bien, sino que ofrezca una
+                                experiencia intuitiva y memorable para el
+                                usuario. Trabajo con las últimas tecnologías y
+                                herramientas del sector, incluyendo HTML5, CSS3,
+                                JavaScript, Bootstrap y frameworks modernos.
+                            </p>
+                            <p>
+                                Creo firmemente en el diseño centrado en el
+                                usuario y en la importancia de la accesibilidad
+                                web. Cada proyecto que realizo está pensado para
+                                funcionar perfectamente en todos los
+                                dispositivos.
+                            </p>
+                        </div>
+
+                        <hr class="my-4 text-muted" />
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <h5 class="fw-bold mb-3">Mi Misión</h5>
+                                <p class="text-muted small">
+                                    Transformar ideas en experiencias digitales
+                                    únicas, combinando diseño atractivo con
+                                    funcionalidad óptima para crear sitios web
+                                    que realmente conecten con las personas.
+                                </p>
+                            </div>
+                            <div class="col-md-6">
+                                <h5 class="fw-bold mb-3">
+                                    Habilidades Principales
+                                </h5>
+                                <div class="skill-item">
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    Diseño UI/UX
+                                </div>
+                                <div class="skill-item">
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    Desarrollo Frontend
+                                </div>
+                                <div class="skill-item">
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    Responsive Design
+                                </div>
+                                <div class="skill-item">
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    Accesibilidad Web
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="custom-card">
+                        <h2 class="section-title mb-1">
+                            Formulario de Contacto
+                        </h2>
+                        <p class="text-muted mb-2">
+                            ¿Tienes un proyecto en mente? ¡Hablemos!
+                        </p>
+                        <p class="text-warning mb-4 small">
+                            <i class="bi bi-envelope"></i>
+                            davidmollaemper@gmail.com
+                        </p>
+
+                        <form action="#" method="POST">
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label"
+                                    >Nombre completo
+                                    <span class="text-danger">*</span></label
+                                >
+                                <div class="input-group">
+                                    <span class="input-group-text"
+                                        ><i class="bi bi-person"></i
+                                    ></span>
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="nombre"
+                                        placeholder="Tu nombre"
+                                        required
+                                    />
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="email" class="form-label"
+                                    >Correo electrónico
+                                    <span class="text-danger">*</span></label
+                                >
+                                <div class="input-group">
+                                    <span class="input-group-text"
+                                        ><i class="bi bi-envelope"></i
+                                    ></span>
+                                    <input
+                                        type="email"
+                                        class="form-control"
+                                        id="email"
+                                        placeholder="tu@email.com"
+                                        required
+                                    />
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="asunto" class="form-label"
+                                    >Asunto</label
+                                >
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="asunto"
+                                    placeholder="Asunto del mensaje"
+                                />
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="mensaje" class="form-label"
+                                    >Mensaje
+                                    <span class="text-danger">*</span></label
+                                >
+                                <div class="input-group">
+                                    <span class="input-group-text"
+                                        ><i class="bi bi-chat-dots"></i
+                                    ></span>
+                                    <textarea
+                                        class="form-control"
+                                        id="mensaje"
+                                        rows="4"
+                                        placeholder="Cuéntame sobre tu proyecto..."
+                                        required
+                                    ></textarea>
+                                </div>
+                            </div>
+
+                            <button
+                                type="submit"
+                                class="btn btn-primary w-100 py-2 fw-bold shadow-sm"
+                            >
+                                <i class="bi bi-send-fill me-2"></i> Enviar
+                                Mensaje
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="py-5">
+            <div class="container">
+                <div class="row gy-4">
+                    <div class="col-lg-3 col-md-6">
+                        <h5>
+                            <i class="bi bi-geo-alt text-warning"></i> Where are
+                            we?
+                        </h5>
+                        <p class="mb-2">
+                            Florida Universitaria, Catarroja, Spain
+                        </p>
+                        <div class="map-placeholder">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3113.5672951709807!2d-0.4102857!3d39.4025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd604f1b0e3c5c3f%3A0x8c3e8e8e8e8e8e8e!2sFlorida%20Universitaria!5e0!3m2!1ses!2ses!4v1234567890"
+                                allowfullscreen=""
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                            ></iframe>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h5>Social Media</h5>
+                        <p>Follow us:</p>
+                        <div class="d-flex">
+                            <a href="#" class="social-icon"
+                                ><i class="bi bi-instagram"></i
+                            ></a>
+                            <a href="#" class="social-icon"
+                                ><i class="bi bi-github"></i
+                            ></a>
+                            <a href="#" class="social-icon"
+                                ><i class="bi bi-twitter-x"></i
+                            ></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h5>Contact Information</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <i
+                                    class="bi bi-telephone text-warning me-2"
+                                ></i>
+                                601 711 183
+                            </li>
+                            <li class="mb-2">
+                                <i class="bi bi-envelope text-warning me-2"></i>
+                                davidmollaemper@gmail.com
+                            </li>
+                            <li class="mb-2">
+                                <i class="bi bi-geo-alt text-warning me-2"></i>
+                                Florida Universitaria, Catarroja
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="logo-box me-2">D</div>
+                            <h5 class="mb-0 text-white">David Molla</h5>
+                        </div>
+                        <p class="small text-muted">
+                            &copy; 2026 David Molla Emper - All rights reserved.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>

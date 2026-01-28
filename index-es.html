@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>David Molla Emper - Portfolio</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
+        />
+
+        <style>
+            /* ESTILOS PERSONALIZADOS (Guide Styles) */
+            :root {
+                --primary-blue: #0d6efd; /* Azul Bootstrap por defecto, ajustable */
+                --dark-bg: #0b1120; /* Color oscuro del footer según tu imagen */
+            }
+
+            body {
+                font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+                background-color: #f8f9fa;
+            }
+
+            /* Navbar */
+            .navbar-brand {
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+            .logo-box {
+                background-color: var(--primary-blue);
+                color: white;
+                width: 35px;
+                height: 35px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 5px;
+                font-weight: bold;
+            }
+
+            /* Jumbotron / Hero Section */
+            .custom-jumbotron {
+                background-color: var(--primary-blue);
+                color: white;
+                padding: 80px 0;
+                text-align: center;
+            }
+            .custom-jumbotron h1 {
+                font-weight: 700;
+                font-size: 3.5rem;
+            }
+            .custom-jumbotron .btn-light {
+                border-radius: 50px;
+                padding: 10px 30px;
+                color: var(--primary-blue);
+                font-weight: 600;
+            }
+
+            /* Cards Section */
+            .card {
+                border: none;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+                transition: transform 0.3s;
+                height: 100%;
+            }
+            .card:hover {
+                transform: translateY(-5px);
+            }
+            .card-img-top {
+                height: 200px;
+                object-fit: cover;
+                border-radius: 5px 5px 0 0;
+            }
+
+            /* Icono flotante en la card */
+            .card-icon-wrapper {
+                position: relative;
+            }
+            .floating-icon {
+                position: absolute;
+                bottom: -20px;
+                left: 20px;
+                width: 50px;
+                height: 50px;
+                background-color: white;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                color: #ff8c00; /* Color naranja de tus iconos */
+                font-size: 1.5rem;
+            }
+
+            .card-body {
+                padding-top: 35px; /* Espacio para el icono */
+            }
+
+            .toggle-text {
+                color: var(--primary-blue);
+                text-decoration: none;
+                cursor: pointer;
+                font-weight: 500;
+                display: inline-flex;
+                align-items: center;
+                margin-top: 10px;
+            }
+
+            /* Footer */
+            footer {
+                background-color: var(--dark-bg);
+                color: #a0a0a0;
+                font-size: 0.9rem;
+            }
+            footer h5 {
+                color: white;
+                font-weight: 700;
+                margin-bottom: 1.2rem;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+            footer .social-icon {
+                width: 40px;
+                height: 40px;
+                background-color: #1f2937;
+                border-radius: 50%;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                margin-right: 10px;
+                text-decoration: none;
+                transition: background 0.3s;
+            }
+            /* Colores específicos iconos RRSS (opcional) */
+            .social-icon.insta:hover {
+                background: #e1306c;
+            }
+            .social-icon.git:hover {
+                background: #333;
+            }
+            .social-icon.twitter:hover {
+                background: #1da1f2;
+            }
+
+            .map-placeholder {
+                width: 100%;
+                height: 150px;
+                background-color: #ddd;
+                border-radius: 8px;
+                overflow: hidden;
+                border: none;
+            }
+            .map-placeholder iframe {
+                width: 100%;
+                height: 100%;
+                border: none;
+                border-radius: 8px;
+            }
+
+            /* Clases de utilidad para mostrar/ocultar */
+            .more-content {
+                display: none;
+            }
+            .more-content.show {
+                display: inline;
+            }
+        </style>
+    </head>
+    <body>
+        <nav
+            class="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm sticky-top"
+        >
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <div class="logo-box">D</div>
+                    David Molla Emper
+                </a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div
+                    class="collapse navbar-collapse justify-content-end"
+                    id="navbarNav"
+                >
+                    <ul class="navbar-nav align-items-center">
+                        <li class="nav-item">
+                            <a
+                                class="nav-link active fw-bold text-primary"
+                                href="index-es.html"
+                                >Inicio</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="proyectos-es.html"
+                                >Proyectos</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacto-es.html"
+                                >Acerca / Contacto</a
+                            >
+                        </li>
+
+                        <li class="nav-item ms-3">
+                            <a class="nav-link fw-bold" href="index-en.html"
+                                ><i class="bi bi-globe"></i> EN</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <header class="custom-jumbotron">
+            <div class="container">
+                <h1 class="display-4">David Molla Emper</h1>
+                <p class="lead fs-3 mb-3">Diseñador Web</p>
+                <p class="fst-italic mb-5 text-white-50">
+                    Transformando ideas en experiencias digitales
+                </p>
+                <a href="proyectos.html" class="btn btn-light btn-lg shadow-sm"
+                    >Ver proyectos</a
+                >
+            </div>
+        </header>
+
+        <main class="container py-5">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-icon-wrapper">
+                            <img
+                                src="/imagenes/ux_ui.png"
+                                class="card-img-top"
+                                alt="Diseño UI UX"
+                            />
+                            <div class="floating-icon">
+                                <i class="bi bi-pencil-fill"></i>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Diseño UI/UX</h5>
+                            <p class="card-text text-muted">
+                                Creo interfaces atractivas e intuitivas que
+                                ofrecen una experiencia de usuario fluida y
+                                funcional.
+                                <span class="more-content" id="more-1">
+                                    Me centro en la investigación de usuarios,
+                                    wireframing y prototipado para asegurar que
+                                    el producto final satisfaga las necesidades
+                                    del usuario de manera eficiente.
+                                </span>
+                            </p>
+                            <div
+                                onclick="toggleText('more-1', this)"
+                                class="toggle-text"
+                            >
+                                <i class="bi bi-plus-lg me-1"></i>
+                                <span>Ver más</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-icon-wrapper">
+                            <img
+                                src="/imagenes/Frontend.avif"
+                                class="card-img-top"
+                                alt="Desarrollo Frontend"
+                            />
+                            <div class="floating-icon">
+                                <i class="bi bi-code-slash"></i>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">
+                                Desarrollo Web Frontend
+                            </h5>
+                            <p class="card-text text-muted">
+                                Transformo diseños en páginas web funcionales
+                                utilizando HTML, CSS y JavaScript modernos.
+                                <span class="more-content" id="more-2">
+                                    <br /><br />Utilizo frameworks como React y
+                                    Vue para construir componentes interactivos
+                                    y asegurar que el sitio sea responsive en
+                                    todos los dispositivos y navegadores.
+                                </span>
+                            </p>
+                            <div
+                                onclick="toggleText('more-2', this)"
+                                class="toggle-text"
+                            >
+                                <i class="bi bi-plus-lg me-1"></i>
+                                <span>Ver más</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-icon-wrapper">
+                            <img
+                                src="/imagenes/Metodologias.avif"
+                                class="card-img-top"
+                                alt="Metodologías Ágiles"
+                            />
+                            <div class="floating-icon">
+                                <i class="bi bi-kanban"></i>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">
+                                Metodologías Ágiles
+                            </h5>
+                            <p class="card-text text-muted">
+                                Trabajo de manera organizada y eficiente
+                                aplicando metodologías como Scrum y Agile.
+                                <span class="more-content" id="more-3">
+                                    Permite una rápida adaptación a los cambios,
+                                    entrega continua de software valioso y
+                                    trabajo colaborativo en equipos
+                                    multidisciplinares.
+                                </span>
+                            </p>
+                            <div
+                                onclick="toggleText('more-3', this)"
+                                class="toggle-text"
+                            >
+                                <i class="bi bi-plus-lg me-1"></i>
+                                <span>Ver más</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="py-5 mt-5">
+            <div class="container">
+                <div class="row gy-4">
+                    <div class="col-lg-3 col-md-6">
+                        <h5>
+                            <i class="bi bi-geo-alt text-warning"></i> ¿Dónde
+                            estamos?
+                        </h5>
+                        <p class="mb-2">
+                            Florida Universitaria, Catarroja, España
+                        </p>
+                        <div class="map-placeholder">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3113.5672951709807!2d-0.4102857!3d39.4025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd604f1b0e3c5c3f%3A0x8c3e8e8e8e8e8e8e!2sFlorida%20Universitaria!5e0!3m2!1ses!2ses!4v1234567890"
+                                allowfullscreen=""
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                            ></iframe>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <h5>Redes Sociales</h5>
+                        <p>Síguenos:</p>
+                        <div class="d-flex">
+                            <a href="#" class="social-icon insta"
+                                ><i class="bi bi-instagram"></i
+                            ></a>
+                            <a href="#" class="social-icon git"
+                                ><i class="bi bi-github"></i
+                            ></a>
+                            <a href="#" class="social-icon twitter"
+                                ><i class="bi bi-twitter-x"></i
+                            ></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <h5>Información de contacto</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <i
+                                    class="bi bi-telephone text-warning me-2"
+                                ></i>
+                                601 711 183
+                            </li>
+                            <li class="mb-2">
+                                <i class="bi bi-envelope text-warning me-2"></i>
+                                davidmollaemper@gmail.com
+                            </li>
+                            <li class="mb-2">
+                                <i class="bi bi-geo-alt text-warning me-2"></i>
+                                Florida Universitaria, Catarroja
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="d-flex align-items-center mb-3">
+                            <div
+                                class="logo-box me-2"
+                                style="background-color: var(--primary-blue)"
+                            >
+                                D
+                            </div>
+                            <h5 class="mb-0 text-white">David Molla</h5>
+                        </div>
+                        <p class="small text-muted">
+                            &copy; 2026 David Molla Emper - Todos los derechos
+                            reservados.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+        <script>
+            function toggleText(id, btnElement) {
+                var content = document.getElementById(id);
+                var icon = btnElement.querySelector("i");
+                var textSpan = btnElement.querySelector("span");
+
+                if (content.classList.contains("show")) {
+                    // Ocultar
+                    content.classList.remove("show");
+                    icon.classList.remove("bi-dash-lg");
+                    icon.classList.add("bi-plus-lg");
+                    textSpan.innerText = "Ver más";
+                } else {
+                    // Mostrar
+                    content.classList.add("show");
+                    icon.classList.remove("bi-plus-lg");
+                    icon.classList.add("bi-dash-lg"); // Cambia a icono de menos
+                    textSpan.innerText = "Ver menos";
+                }
+            }
+        </script>
+    </body>
+</html>
